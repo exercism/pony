@@ -1,0 +1,19 @@
+{
+  "slug": "pony",
+  "language": "Pony",
+  "repository": "https://github.com/exercism/xpony",
+  "active": false,
+  "test_pattern": "TODO",
+  "problems": [
+
+  ],
+  "deprecated": [
+
+  ],
+  "ignored": [
+    "bin"
+  ],
+  "foregone": [
+
+  ]
+}
