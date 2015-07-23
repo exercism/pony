@@ -6,7 +6,8 @@
   "test_pattern": "TODO",
   "problems": [
       "hello-world",
-      "difference-of-squares"
+      "difference-of-squares",
+      "bob"
   ],
   "deprecated": [
 
