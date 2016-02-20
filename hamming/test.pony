@@ -1,25 +1,22 @@
 use "ponytest"
 
-actor Main
-
+actor Main is TestList
   new create(env: Env) =>
-    var test = PonyTest(env)
+    PonyTest(env, this)
 
-    test(recover _HammingTest end)
+  new make() =>
+    None
 
-    test.complete()
-
+  fun tag tests(test: PonyTest) =>
+    test(_HammingTest)
 
 class _HammingTest iso is UnitTest
-
   """
   Test Hamming package
   """
-
   fun name(): String => "hamming/Hamming"
 
   fun apply(h: TestHelper): TestResult ? =>
-
     h.expect_eq[U8](0, Hamming("A", "A"))
     h.expect_eq[U8](0, Hamming("GGACTGA", "GGACTGA"))
     h.expect_eq[U8](1, Hamming("A", "G"))
