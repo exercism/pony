@@ -29,4 +29,3 @@ class _HammingTest iso is UnitTest
     h.expect_eq[U8](9, Hamming("GGACGGATTCTG", "AGGACGGATTCT"))
     h.expect_error(lambda()? => Hamming("AATG", "AAA") end)
     h.expect_error(lambda()? => Hamming("ATA", "AGTG") end)
-    true

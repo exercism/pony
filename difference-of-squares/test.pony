@@ -29,4 +29,3 @@ class _TestSquares iso is UnitTest
     h.expect_eq[U32](25502500, Squares(100).square_of_sums())
     h.expect_eq[U32](338350, Squares(100).sum_of_squares())
     h.expect_eq[U32](25164150, Squares(100).difference())
-    true
