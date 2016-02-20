@@ -1,13 +1,14 @@
 use "ponytest"
 
-actor Main
-
+actor Main is TestList
   new create(env: Env) =>
-    var test = PonyTest(env)
+    PonyTest(env, this)
 
-    test(recover _TestSquares end)
+  new make() =>
+    None
 
-    test.complete()
+  fun tag tests(test: PonyTest) =>
+    test(_TestSquares)
 
 class _TestSquares iso is UnitTest
   """
