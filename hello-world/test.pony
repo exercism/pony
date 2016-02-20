@@ -1,12 +1,14 @@
 use "ponytest"
 
-actor Main
+actor Main is TestList
   new create(env: Env) =>
-    var test = PonyTest(env)
+    PonyTest(env, this)
 
-    test(recover _TestHelloWorld end)
+  new make() =>
+    None
 
-    test.complete()
+  fun tag tests(test: PonyTest) =>
+    test(_TestHelloWorld)
 
 class _TestHelloWorld iso is UnitTest
   """
@@ -14,7 +16,7 @@ class _TestHelloWorld iso is UnitTest
   """
   fun name(): String => "hello-world/HelloWorld"
 
-  fun apply(h: TestHelper): TestResult =>
+  fun apply(h: TestHelper) : TestResult =>
     let hello: HelloWorld = HelloWorld.create()
 
     h.expect_eq[String]("Hello, World!", hello.say_hello())
