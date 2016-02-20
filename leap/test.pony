@@ -1,18 +1,19 @@
 use "ponytest"
 
-
-actor Main
-
+actor Main is TestList
   new create(env: Env) =>
-    var test = PonyTest(env)
+    PonyTest(env, this)
 
-    test(recover _LeapTest end)
+  new make() =>
+    None
 
-    test.complete()
-
+  fun tag tests(test: PonyTest) =>
+    test(_LeapTest)
 
 class _LeapTest iso is UnitTest
-
+  """
+  Test Leap package
+  """
   fun name(): String => "leap/Leap"
 
   fun apply(h: TestHelper): TestResult =>
