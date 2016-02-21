@@ -1,13 +1,14 @@
 use "ponytest"
 
-actor Main
-
+actor Main is TestList
   new create(env: Env) =>
-    var test = PonyTest(env)
+    PonyTest(env, this)
 
-    test(recover _TestSquares end)
+  new make() =>
+    None
 
-    test.complete()
+  fun tag tests(test: PonyTest) =>
+    test(_TestSquares)
 
 class _TestSquares iso is UnitTest
   """
@@ -28,4 +29,3 @@ class _TestSquares iso is UnitTest
     h.expect_eq[U32](25502500, Squares(100).square_of_sums())
     h.expect_eq[U32](338350, Squares(100).sum_of_squares())
     h.expect_eq[U32](25164150, Squares(100).difference())
-    true

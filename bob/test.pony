@@ -1,19 +1,20 @@
 use "ponytest"
 
-actor Main
+actor Main is TestList
   new create(env: Env) =>
-    var test = PonyTest(env)
+    PonyTest(env, this)
 
-    test(recover _TestBob end)
+  new make() =>
+    None
 
-    test.complete()
+  fun tag tests(test: PonyTest) =>
+    test(_TestBob)
 
 // TODO: Separate out into TestShout, TestQuestion, etc. for to make more sense.
 class _TestBob iso is UnitTest
   """
   Test Bob package
   """
-
   fun name(): String => "bob/Bob"
 
   fun apply(h: TestHelper): TestResult ? =>
