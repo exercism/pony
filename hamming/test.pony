@@ -8,28 +8,38 @@ actor Main is TestList
     None
 
   fun tag tests(test: PonyTest) =>
-    test(recover _HammingTest end)
+    test(recover _HammingParamTest end)
+    test(recover _HammingDistanceTest end)
 
-class _HammingTest iso is UnitTest
+class _HammingDistanceTest iso is UnitTest
   """
-  Test Hamming package
+  Test Hamming package returns the right distance
   """
   fun name(): String => "hamming/Hamming"
 
   fun apply(h: TestHelper): TestResult ? =>
+    // Note -> Current master-branch simplifies these functions to 
+    // assert_eq, and removes expect
+    // https://github.com/ponylang/ponyc/blob/master/packages/ponytest/helper.pony
 
-    h.assert_eq[U8](0, Hamming("A", "A"))
-    h.assert_eq[U8](0, Hamming("GGACTGA", "GGACTGA"))
-    h.assert_eq[U8](1, Hamming("A", "G"))
-    h.assert_eq[U8](2, Hamming("AG", "CT"))
-    h.assert_eq[U8](1, Hamming("AT", "CT"))
-    h.assert_eq[U8](1, Hamming("GGACG", "GGTCG"))
-    h.assert_eq[U8](2, Hamming("ACCAGGG", "ACTATGG"))
-    h.assert_eq[U8](1, Hamming("AGG", "AGA"))
-    h.assert_eq[U8](4, Hamming("GATACA", "GCATAA"))
-    h.assert_eq[U8](9, Hamming("GGACGGATTCTG", "AGGACGGATTCT"))
-    
-    // TODO test for thrown errors on inputs of different lengths
-    // h.assert_error(lambda()? => Hamming.apply("GATA", "GAT") end)
-    // h.assert_error(lambda()? => Hamming.apply("GATA", "GAT") end)
+    h.expect_eq[U8](0, Hamming("A", "A"))
+    h.expect_eq[U8](0, Hamming("GGACTGA", "GGACTGA"))
+    h.expect_eq[U8](1, Hamming("A", "G"))
+    h.expect_eq[U8](2, Hamming("AG", "CT"))
+    h.expect_eq[U8](1, Hamming("AT", "CT"))
+    h.expect_eq[U8](1, Hamming("GGACG", "GGTCG"))
+    h.expect_eq[U8](2, Hamming("ACCAGGG", "ACTATGG"))
+    h.expect_eq[U8](1, Hamming("AGG", "AGA"))
+    h.expect_eq[U8](4, Hamming("GATACA", "GCATAA"))
+    h.expect_eq[U8](9, Hamming("GGACGGATTCTG", "AGGACGGATTCT"))
     true
+
+ class _HammingParamTest iso is UnitTest
+  """
+  Test Hamming package returns the right distance
+  """
+  fun name(): String => "hamming/Hamming"
+
+  fun apply(h: TestHelper): TestResult =>
+    h.expect_error(lambda()? => Hamming("GAT", "GA") end)
+    h.expect_error(lambda()? => Hamming("GA", "GAC") end)
