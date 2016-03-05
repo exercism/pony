@@ -16,9 +16,9 @@ class _LeapTest iso is UnitTest
   """
   fun name(): String => "leap/Leap"
 
-  fun apply(h: TestHelper): TestResult ? =>
-    h.assert_true(Leap(1996), "Testing a leap year")
-    h.assert_false(Leap(1997), "Testing an odd year")
-    h.assert_false(Leap(1998), "Testing a non-leap even year")
-    h.assert_false(Leap(1900), "Testing a century")
-    h.assert_true(Leap(2000), "Testing an exceptional century")
+  fun apply(h: TestHelper): TestResult =>
+    h.expect_true(Leap(1996), "Testing a leap year")
+    h.expect_false(Leap(1997), "Testing an odd year")
+    h.expect_false(Leap(1998), "Testing a non-leap even year")
+    h.expect_false(Leap(1900), "Testing a century")
+    h.expect_true(Leap(2000), "Testing an exceptional century")
