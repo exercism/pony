@@ -8,34 +8,66 @@ actor Main is TestList
     None
 
   fun tag tests(test: PonyTest) =>
-    test(recover _TestBob end)
+    test(recover _BobShoutTest end)
+    test(recover _BobQuestionTest end)
+    test(recover _BobSilentTest end)
+    test(recover _BobDefaultTest end)
 
-// TODO: Separate out into TestShout, TestQuestion, etc. for to make more sense.
-class _TestBob iso is UnitTest
+class _BobShoutTest iso is UnitTest
   """
-  Test Bob package
+  Test matching when Bob is shouted at
   """
 
   fun name(): String => "bob/Bob"
 
-  fun apply(h: TestHelper): TestResult ? =>
+  fun apply(h: TestHelper): TestResult =>
     let shout_resp: String = "Whoa, chill out!"
+
+    h.expect_eq[String](shout_resp, Bob("WATCH OUT!"))
+    h.expect_eq[String](shout_resp, Bob("WHAT THE HELL WERE YOU THINKING?"))
+    h.expect_eq[String](shout_resp, Bob("1, 2, 3 GO!"))
+    h.expect_eq[String](shout_resp, Bob("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"))
+
+class _BobQuestionTest iso is UnitTest
+  """
+  Test matching when Bob is questioned
+  """
+
+  fun name(): String => "bob/Bob"
+
+  fun apply(h: TestHelper): TestResult =>
     let ques_resp: String = "Sure."
+
+    h.expect_eq[String](ques_resp, Bob("Does this cryogenic chamber make me look fat?"))
+    h.expect_eq[String](ques_resp, Bob("You are, what, like 15?"))
+    h.expect_eq[String](ques_resp, Bob("4?"))
+    h.expect_eq[String](ques_resp, Bob("Wait! Hang on. Are you going to be OK?"))
+
+class _BobSilentTest iso is UnitTest
+  """
+  Test matching when Bob faces silence
+  """
+
+  fun name(): String => "bob/Bob"
+
+  fun apply(h: TestHelper): TestResult =>
     let silent_resp: String = "Fine. Be that way!"
+
+    h.expect_eq[String](silent_resp, Bob(""))
+    h.expect_eq[String](silent_resp, Bob("   "))
+
+class _BobDefaultTest iso is UnitTest
+  """
+  Test matching when Bob is defaulting
+  """
+
+  fun name(): String => "bob/Bob"
+
+  fun apply(h: TestHelper): TestResult =>
     let default_resp: String = "Whatever."
 
-    h.assert_eq[String](default_resp, Bob("Tom-ay-to, tom-aaaah-to."))
-    h.assert_eq[String](shout_resp, Bob("WATCH OUT!"))
-    h.assert_eq[String](ques_resp, Bob("Does this cryogenic chamber make me look fat?"))
-    h.assert_eq[String](ques_resp, Bob("You are, what, like 15?"))
-    h.assert_eq[String](default_resp, Bob("Let's go make out behind the gym!"))
-    h.assert_eq[String](default_resp, Bob("It's OK if you don't want to go to the DMV."))
-    h.assert_eq[String](shout_resp, Bob("WHAT THE HELL WERE YOU THINKING?"))
-    h.assert_eq[String](shout_resp, Bob("1, 2, 3 GO!"))
-    h.assert_eq[String](default_resp, Bob("1, 2, 3"))
-    h.assert_eq[String](ques_resp, Bob("4?"))
-    h.assert_eq[String](shout_resp, Bob("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"))
-    h.assert_eq[String](default_resp, Bob("Ending with ? means a question."))
-    h.assert_eq[String](ques_resp, Bob("Wait! Hang on. Are you going to be OK?"))
-    h.assert_eq[String](silent_resp, Bob(""))
-    h.assert_eq[String](silent_resp, Bob("   "))
+    h.expect_eq[String](default_resp, Bob("Tom-ay-to, tom-aaaah-to."))
+    h.expect_eq[String](default_resp, Bob("Let's go make out behind the gym!"))
+    h.expect_eq[String](default_resp, Bob("It's OK if you don't want to go to the DMV."))
+    h.expect_eq[String](default_resp, Bob("1, 2, 3"))
+    h.expect_eq[String](default_resp, Bob("Ending with ? means a question."))
