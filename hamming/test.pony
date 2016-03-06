@@ -8,11 +8,12 @@ actor Main is TestList
     None
 
   fun tag tests(test: PonyTest) =>
-    test(_HammingTest)
+    test(_HammingDistanceTest)
+    test(_HammingParamTest)
 
-class _HammingTest iso is UnitTest
+class _HammingDistanceTest iso is UnitTest
   """
-  Test Hamming package
+  Test Hamming package returns the right distance
   """
   fun name(): String => "hamming/Hamming"
 
@@ -27,5 +28,13 @@ class _HammingTest iso is UnitTest
     h.expect_eq[U8](1, Hamming("AGG", "AGA"))
     h.expect_eq[U8](4, Hamming("GATACA", "GCATAA"))
     h.expect_eq[U8](9, Hamming("GGACGGATTCTG", "AGGACGGATTCT"))
-    h.expect_error(lambda()? => Hamming("AATG", "AAA") end)
-    h.expect_error(lambda()? => Hamming("ATA", "AGTG") end)
+
+ class _HammingParamTest iso is UnitTest
+  """
+  Test Hamming package returns the right distance
+  """
+  fun name(): String => "hamming/Hamming"
+
+  fun apply(h: TestHelper): TestResult =>
+    h.expect_error(lambda()? => Hamming("GAT", "GA") end)
+    h.expect_error(lambda()? => Hamming("GA", "GAC") end)

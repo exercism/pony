@@ -15,7 +15,7 @@ class _TestSquares iso is UnitTest
   Test Difference of Squares package
   """
 
-  fun name(): String => "difference=of-squares/Squares"
+  fun name(): String => "difference-of-squares/Squares"
 
   fun apply(h: TestHelper): TestResult =>
     h.expect_eq[U32](225, Squares(5).square_of_sums())
