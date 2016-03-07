@@ -20,8 +20,9 @@ class _AnagramTest iso is UnitTest
   fun apply(h: TestHelper): TestResult ? =>
     let anagrams =  ["hello", "zombies", "pants"]
     let emptyArray: Array[String] = Array[String]
-    let helloArray = ["hello"]
 
+    //Anagram should return an empty array if there are no anagrams
     h.assert_array_eq[String](emptyArray, Anagram("banana", anagrams))
-    h.assert_array_eq[String](helloArray, Anagram("hello", anagrams))
+    // Anagram should ignore same words, those aren't anagrams
+    h.assert_array_eq[String](emptyArray, Anagram("hello", anagrams))
     true 
