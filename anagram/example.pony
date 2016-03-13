@@ -4,15 +4,15 @@ class Anagram
 
   fun apply(word: String, phrase: Array[String]): Array[String] ?  =>
     let anagrams: Array[String] = Array[String]
-    let scrubbed_word: Array[U8] = _to_array_and_order(word.lower())
+    let word_array: Array[U8] = _to_array_and_order(word.lower())
 
 
     for (index, value) in phrase.pairs() do
-      let scrubbed_value: Array[U8] = _to_array_and_order(value.lower())
+      let value_array: Array[U8] = _to_array_and_order(value.lower())
       
       if value.size() != word.size() then continue end
       if value.lower() == word.lower() then continue end
-      if _check_array_eq(scrubbed_word, scrubbed_value) then
+      if _check_array_eq(word_array, value_array) then
         anagrams.push(value)
       end
     end
