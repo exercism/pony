@@ -20,6 +20,10 @@ class Anagram
     anagrams
         
   fun _to_array_and_order(word: String): Array[U8] ? =>
+    // As of right now the String.split() function doesn't appear to work 
+    // on no delimiter, i.e. "abcd".split("") to ["a", "b", "c", "d"]
+    // So I pull of the bytes
+
     let word_array: Array[U8] = Array[U8]
     let sorted_array: Array[U8] = Array[U8]
 
@@ -49,6 +53,7 @@ class Anagram
     sorted_array
 
   // https://github.com/ponylang/ponyc/blob/master/packages/ponytest/helper.pony#L163-L188
+  // there isn't a join function as of 2.1, and Array doesn't support eq()
   fun _check_array_eq(expect: Array[U8], actual: Array[U8]): Bool ? =>
     var ok = true
 
