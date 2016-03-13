@@ -2,79 +2,68 @@ use "PonyTest"
 
 class Anagram
 
-  fun apply(word: String, phrase: Array[String]): Array[String]  =>
-    let default: Array[String] = Array[String]
+  fun apply(word: String, phrase: Array[String]): Array[String] ?  =>
+    let anagrams: Array[String] = Array[String]
+    let scrubbed_word: Array[U8] = _to_array_and_order(word.lower())
+
 
     for (index, value) in phrase.pairs() do
-      // reject same word as not anagram
-      if value.lower() == word.lower() then phrase.remove(index, 1) end
-      // if _check_array_eq_unordered[String](
-      //   _split_and_order(value),
-      //   _split_and_order(word)) then
-      //   phrase
-      // else
-      //   phrase.remove(index, 1) 
-      // end
+      let scrubbed_value: Array[U8] = _to_array_and_order(value.lower())
+      
+      if value.size() != word.size() then continue end
+      if value.lower() == word.lower() then continue end
+      if _check_array_eq(scrubbed_word, scrubbed_value) then
+        anagrams.push(value)
+      end
     end
 
-    if phrase.size() > 0 then
-      phrase
-    else
-      default
-    end
+    anagrams
         
-  fun _split_and_order(word: String): Array[String] =>
-    let newWord: Array[String] = word.lower().split("")
-    newWord
+  fun _to_array_and_order(word': String): Array[U8] ? =>
+    let word_array: Array[U8] = Array[U8]
+    let sorted_array: Array[U8] = Array[U8]
+    let word = word'
 
-  // Trying to use the compiler libraries unordered array check :(
-  
-  // fun _check_array_eq_unordered[A: (Equatable[A] & Stringable)]
-  //   (verb: String, expect: ReadSeq[A], actual: ReadSeq[A], msg: String): Bool
-  // =>
-  //   """
-  //   Check that the contents of the 2 given ReadSeqs are equal.
-  //   """
-  //   try
-  //     let missing = Array[A]
-  //     let consumed = Array[Bool].init(false, actual.size())
-  //     for e in expect.values() do
-  //       var found = false
-  //       var i: USize = -1
-  //       for a in actual.values() do
-  //         i = i + 1
-  //         if consumed(i) then continue end
-  //         if e == a then
-  //           consumed.update(i, true)
-  //           found = true
-  //           break
-  //         end
-  //       end
-  //       if not found then
-  //         missing.push(e)
-  //       end
-  //     end
+    for value in word.values() do
+      word_array.push(value)
+    end
 
-  //     let extra = Array[A]
-  //     for (i, c) in consumed.pairs() do
-  //       if not c then extra.push(actual(i)) end
-  //     end
+    
+    for (index, value) in word_array.pairs() do
+      var inserted = false
+      if (index == 0) then sorted_array.push(value) end
+      if (index > 0) then
+        for (i, v) in sorted_array.pairs() do
+          if value <= v then
+            sorted_array.insert(i, value)
+            inserted = true
+            break
+          end
+        end
+        if not inserted then
+          sorted_array.push(value)
+          inserted = false
+        end
+      end
+    end
 
-  //     if (extra.size() != 0) or (missing.size() != 0) then
-  //       assert_failed(
-  //         verb + " EQ_UNORDERED failed. " + msg + " Expected (" +
-  //         _print_array[A](expect) + ") == (" + _print_array[A](actual) + "):" +
-  //         "\nMissing: " + _print_array[A](missing) +
-  //         "\nExtra: " + _print_array[A](extra))
-  //       return false
-  //     end
-  //     log(
-  //       verb + " EQ_UNORDERED passed. " + msg + " Got (" +
-  //       _print_array[A](expect) + ") == (" + _print_array[A](actual) + ")",
-  //       true)
-  //     true
-  //   else
-  //     assert_failed(verb + " EQ_UNORDERED failed from an internal error.")
-  //     false
-  //   end
+    sorted_array
 
+  // https://github.com/ponylang/ponyc/blob/master/packages/ponytest/helper.pony#L163-L188
+  fun _check_array_eq(expect: Array[U8], actual: Array[U8]): Bool ? =>
+    var ok = true
+
+    if expect.size() != actual.size() then
+      ok = false
+    else
+      var i: U64 = 0
+      while i < expect.size() do
+        if expect(i) != actual(i) then
+          ok = false
+          break
+        end
+
+        i = i + 1
+      end
+    end
+    ok
