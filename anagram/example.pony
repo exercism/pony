@@ -19,10 +19,9 @@ class Anagram
 
     anagrams
         
-  fun _to_array_and_order(word': String): Array[U8] ? =>
+  fun _to_array_and_order(word: String): Array[U8] ? =>
     let word_array: Array[U8] = Array[U8]
     let sorted_array: Array[U8] = Array[U8]
-    let word = word'
 
     for value in word.values() do
       word_array.push(value)
