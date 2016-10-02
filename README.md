@@ -36,3 +36,6 @@ Please see the [contributing guide](https://github.com/exercism/x-api/blob/maste
 The MIT License (MIT)
 
 Copyright (c) 2015 Katrina Owen, _@kytrinyx.com
+
+### Pony icon
+The icon of a pony in use here is in the public domain.
