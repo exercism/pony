@@ -4,14 +4,6 @@
   "repository": "https://github.com/exercism/xpony",
   "active": false,
   "test_pattern": "TODO",
-  "problems": [
-      "hello-world",
-      "difference-of-squares",
-      "bob",
-      "hamming",
-      "leap",
-      "anagram"
-  ],
   "deprecated": [
 
   ],
@@ -22,5 +14,37 @@
   ],
   "foregone": [
 
+  ],
+  "exercises": [
+    {
+      "difficulty": 1,
+      "slug": "hello-world",
+      "topics": []
+    },
+    {
+      "difficulty": 1,
+      "slug": "difference-of-squares",
+      "topics": []
+    },
+    {
+      "difficulty": 1,
+      "slug": "bob",
+      "topics": []
+    },
+    {
+      "difficulty": 1,
+      "slug": "hamming",
+      "topics": []
+    },
+    {
+      "difficulty": 1,
+      "slug": "leap",
+      "topics": []
+    },
+    {
+      "difficulty": 1,
+      "slug": "anagram",
+      "topics": []
+    }
   ]
 }
