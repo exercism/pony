@@ -10,14 +10,15 @@ actor Main is TestList
   fun tag tests(test: PonyTest) =>
     test(_TestHelloWorld)
 
-class _TestHelloWorld iso is UnitTest
+class iso _TestHelloWorld is UnitTest
   """
   Test HelloWorld package
   """
   fun name(): String => "hello-world/HelloWorld"
 
-  fun apply(h: TestHelper): TestResult =>
+  fun apply(h: TestHelper) =>
     let hello: HelloWorld = HelloWorld.create()
 
-    h.expect_eq[String]("Hello, World!", hello.say_hello())
-    h.expect_eq[String]("Hello, Exercism!", hello.say_hello("Exercism"))
+    h.assert_eq[String]("Hello, World!", hello.say_hello())
+    h.assert_eq[String]("Hello, Exercism!", hello.say_hello("Exercism"))
+
