@@ -10,18 +10,18 @@ actor Main is TestList
   fun tag tests(test: PonyTest) =>
     test(_LeapTest)
 
-class _LeapTest iso is UnitTest
+class iso _LeapTest is UnitTest
   """
   Test Leap package
   """
   fun name(): String => "leap/Leap"
 
-  fun apply(h: TestHelper): TestResult =>
-    // Note -> Current master-branch simplifies these functions to 
+  fun apply(h: TestHelper) =>
+    // Note -> Current master-branch simplifies these functions to
     // assert_true/false, and removes expect
     // https://github.com/ponylang/ponyc/blob/master/packages/ponytest/helper.pony
-    h.expect_true(Leap(1996), "Testing a leap year")
-    h.expect_false(Leap(1997), "Testing an odd year")
-    h.expect_false(Leap(1998), "Testing a non-leap even year")
-    h.expect_false(Leap(1900), "Testing a century")
-    h.expect_true(Leap(2000), "Testing an exceptional century")
+    h.assert_true(Leap(1996), "Testing a leap year")
+    h.assert_false(Leap(1997), "Testing an odd year")
+    h.assert_false(Leap(1998), "Testing a non-leap even year")
+    h.assert_false(Leap(1900), "Testing a century")
+    h.assert_true(Leap(2000), "Testing an exceptional century")

@@ -10,14 +10,14 @@ actor Main is TestList
   fun tag tests(test: PonyTest) =>
     test(_AnagramTest)
 
-class _AnagramTest iso is UnitTest
+class iso _AnagramTest is UnitTest
   """
-  Test Anagram package 
+  Test Anagram package
   """
 
   fun name(): String => "anagram/Anagram"
 
-  fun apply(h: TestHelper): TestResult ? =>
+  fun apply(h: TestHelper): None ? =>
     let anagrams =  ["banana", "bob", "sent", "sale", "ales"]
     let emptyArray: Array[String] = Array[String]
 
@@ -33,4 +33,3 @@ class _AnagramTest iso is UnitTest
     h.assert_array_eq[String](["sent"],Anagram("nETs", anagrams))
     // Anagram should return multiple anagrams
     h.assert_array_eq[String](["sale", "ales"], Anagram("seal", anagrams))
-    true 

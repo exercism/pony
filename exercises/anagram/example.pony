@@ -1,4 +1,4 @@
-use "PonyTest"
+use "ponytest"
 
 class Anagram
 
@@ -9,7 +9,7 @@ class Anagram
 
     for (index, value) in phrase.pairs() do
       let value_array: Array[U8] = _to_array_and_order(value.lower())
-      
+
       if value.size() != word.size() then continue end
       if value.lower() == word.lower() then continue end
       if _check_array_eq(word_array, value_array) then
@@ -18,9 +18,9 @@ class Anagram
     end
 
     anagrams
-        
+
   fun _to_array_and_order(word: String): Array[U8] ? =>
-    // As of right now the String.split() function doesn't appear to work 
+    // As of right now the String.split() function doesn't appear to work
     // on no delimiter, i.e. "abcd".split("") to ["a", "b", "c", "d"]
     // So I pull of the bytes
 
@@ -31,7 +31,7 @@ class Anagram
       word_array.push(value)
     end
 
-    
+
     for (index, value) in word_array.pairs() do
       var inserted = false
       if (index == 0) then sorted_array.push(value) end
@@ -60,7 +60,7 @@ class Anagram
     if expect.size() != actual.size() then
       ok = false
     else
-      var i: U64 = 0
+      var i: USize = 0
       while i < expect.size() do
         if expect(i) != actual(i) then
           ok = false
