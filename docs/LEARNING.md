@@ -1,4 +1,4 @@
-These resources will help you get started with Pony:
+## Resources for Learning Pony:
 
 - [The Pony Tutorial](https://tutorial.ponylang.org/)
 - [Pony Patterns](https://patterns.ponylang.org/)
