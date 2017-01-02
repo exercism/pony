@@ -36,5 +36,5 @@ class iso _HammingDistanceTest is UnitTest
   fun name(): String => "hamming/Hamming"
 
   fun apply(h: TestHelper) =>
-    h.assert_error(lambda()? => Hamming("GAT", "GA") end)
-    h.assert_error(lambda()? => Hamming("GA", "GAC") end)
+    h.assert_error({()? => Hamming("GAT", "GA")})
+    h.assert_error({()? => Hamming("GA", "GAC")})
