@@ -1,14 +1,12 @@
-## Installation from Package
+## Installing the Pony Compiler
 
-### Mac OS X
-
-The Pony compiler (ponyc) is available for install using Homebrew!
+### Homebrew on Mac OS X
 
 ```bash
 brew update
 brew install ponyc
 ```
 
-## Installation from Source
+### Other Platforms
 
-Instructions for installing Pony from source on Windows, Mac OS X, Linux, and FreeBSD can be found in the [installation instructions in the Pony tutorial.]( http://tutorial.ponylang.org/getting-started/installation.html)
+Instructions for installing Pony can be found in the [ponyc installation](https://github.com/ponylang/ponyc/blob/master/README.md#installation)
