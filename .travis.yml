@@ -1,6 +1,18 @@
 ---
-language: bash
+language: c
+
+sudo: true
+
+install:
+  - sudo apt-get update -q
+  - sudo apt-get install -y python-software-properties
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -q
+  - sudo apt-get install -y wget git apt-transport-https g++-5 build-essential zlib1g-dev libncurses5-dev libssl-dev
+
+  - sudo bash bin/install-deps
+
 script:
-- bin/fetch-configlet
-- bin/configlet .
-sudo: false
+  - bin/fetch-configlet
+  - bin/configlet .
+  - bin/test-exercises

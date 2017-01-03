@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -eu
+
+run_tests() {
+  local path=$1
+  local base=$(basename $path)
+  printf "\nRunning tests for %s\n\n" $base
+  (
+    cd $path
+    ponyc -d -V0
+    ./$base
+    rm $base
+  )
+}
+
+exercises_dir="exercises/*"
+
+for path in $exercises_dir; do
+  [ -d "${path}" ] || continue
+  run_tests $path
+done
