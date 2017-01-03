@@ -1,6 +1,24 @@
 ---
-language: bash
+language: c
+
+sudo: true
+
+install:
+  - sudo apt-get update -q
+  - sudo apt-get install -y python-software-properties
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -q
+  - sudo apt-get install -y wget git apt-transport-https g++-5 build-essential zlib1g-dev libncurses5-dev libssl-dev
+
+  - wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre2-10.21.tar.bz2
+  - tar -xjvf pcre2-10.21.tar.bz2
+  - cd pcre2-10.21 && ./configure --prefix=/usr && make && sudo make install && cd -
+
+  - echo "deb https://dl.bintray.com/pony-language/ponyc-debian pony-language main" | sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update -q
+  - sudo apt-get install -y --force-yes ponyc-release
+
 script:
-- bin/fetch-configlet
-- bin/configlet .
-sudo: false
+  - bin/fetch-configlet
+  - bin/configlet .
+  - bin/test-exercises
