@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Install pcre2
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre2-10.21.tar.bz2
+tar -xjvf pcre2-10.21.tar.bz2
+cd pcre2-10.21 && ./configure --prefix=/usr && make && sudo make install && cd -
+
+# Insall ponyc
+echo "deb https://dl.bintray.com/pony-language/ponyc-debian pony-language main" | sudo tee -a /etc/apt/sources.list
+sudo apt-get update -q
+sudo apt-get install -y --force-yes ponyc-release
