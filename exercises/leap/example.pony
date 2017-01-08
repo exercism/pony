@@ -1,10 +1,4 @@
-class Leap
-
-  fun apply(year: U32): Bool =>
-    if (year % 400) == 0 then
-      true
-    elseif ((year % 100) != 0) and ((year % 4) == 0) then
-      true
-    else
-      false
-    end
+primitive Leap
+  fun apply(year: USize): Bool =>
+    let has_factor = {(n: USize)(year): Bool => (year % n) == 0}
+    has_factor(4) and (not has_factor(100) or has_factor(400))

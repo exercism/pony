@@ -5,12 +5,12 @@ actor Main is TestList
     PonyTest(env, this)
 
   fun tag tests(test: PonyTest) =>
-    test(_BobShoutTest)
-    test(_BobQuestionTest)
-    test(_BobSilentTest)
-    test(_BobDefaultTest)
+    test(_TestBobShout)
+    test(_TestBobQuestion)
+    test(_TestBobSilent)
+    test(_TestBobDefault)
 
-class iso _BobShoutTest is UnitTest
+class iso _TestBobShout is UnitTest
   fun name(): String => "bob/Bob (Whoa, chill out!)"
 
   fun apply(h: TestHelper): None =>
@@ -21,7 +21,7 @@ class iso _BobShoutTest is UnitTest
     h.assert_eq[String](shout_resp, Bob("1, 2, 3 GO!"))
     h.assert_eq[String](shout_resp, Bob("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"))
 
-class iso _BobQuestionTest is UnitTest
+class iso _TestBobQuestion is UnitTest
   fun name(): String => "bob/Bob (Sure.)"
 
   fun apply(h: TestHelper): None =>
@@ -32,7 +32,7 @@ class iso _BobQuestionTest is UnitTest
     h.assert_eq[String](ques_resp, Bob("4?"))
     h.assert_eq[String](ques_resp, Bob("Wait! Hang on. Are you going to be OK?"))
 
-class iso _BobSilentTest is UnitTest
+class iso _TestBobSilent is UnitTest
   fun name(): String => "bob/Bob (Fine. Be that way!)"
 
   fun apply(h: TestHelper): None =>
@@ -41,7 +41,7 @@ class iso _BobSilentTest is UnitTest
     h.assert_eq[String](silent_resp, Bob(""))
     h.assert_eq[String](silent_resp, Bob("   "))
 
-class iso _BobDefaultTest is UnitTest
+class iso _TestBobDefault is UnitTest
   fun name(): String => "bob/Bob (Whatever.)"
 
   fun apply(h: TestHelper): None =>
