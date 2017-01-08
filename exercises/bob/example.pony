@@ -1,33 +1,33 @@
-use "regex"
+use "itertools"
 
-// Not the best example. Will refactor when I grok the type system better.
-
-
-class Bob
-  let _default: String
-
-  new create() =>
-    _default = "Whatever."
-
-  fun apply(phrase: String): String ? =>
-    if loud(phrase) then
-      "Whoa, chill out!"
-    elseif question(phrase) then
-      "Sure."
-    elseif silent(phrase) then
+primitive Bob
+  fun apply(phrase: String): String =>
+    if _silent(phrase) then
       "Fine. Be that way!"
+    elseif _loud(phrase) then
+      "Whoa, chill out!"
+    elseif _question(phrase) then
+      "Sure."
     else
-      _default
+      "Whatever."
     end
 
-  fun loud(phrase: String): Bool ? =>
-    (Regex("[A-Z]").eq(phrase)) and (phrase == phrase.upper())
+  fun _silent(phrase: String): Bool =>
+    phrase.clone().>strip() == ""
 
-  fun question(phrase: String): Bool =>
-    let rephrase: String box = consume phrase
-    rephrase.reverse().at("?",0)
+  fun _loud(phrase: String): Bool =>
+    Iter[U8](phrase.values()).all(this~_not_lowercase())
+      and Iter[U8](phrase.values()).any(this~_is_letter())
 
+  fun _not_lowercase(b: U8): Bool =>
+    (b < 'a') and ('z' > b)
 
-  fun silent(phrase: String): Bool ? =>
-    let rephrase: String box = consume phrase
-    (rephrase.size() == 0) or Regex("^\\s+$").eq(rephrase)
+  fun _is_letter(b: U8): Bool =>
+    (('a' <= b) and (b <= 'z')) or (('A' <= b) and (b <= 'Z')) 
+
+  fun _question(phrase: String): Bool =>
+    try
+      Iter[U8](phrase.values()).last() == '?'
+    else
+      false
+    end

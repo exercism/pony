@@ -27,7 +27,9 @@
     {
       "difficulty": 1,
       "slug": "bob",
-      "topics": []
+      "topics": [
+        "strings"
+      ]
     },
     {
       "difficulty": 1,
