@@ -34,7 +34,9 @@
     {
       "difficulty": 1,
       "slug": "hamming",
-      "topics": []
+      "topics": [
+        "errors"
+      ]
     },
     {
       "difficulty": 1,
