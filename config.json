@@ -20,7 +20,9 @@
     {
       "difficulty": 1,
       "slug": "difference-of-squares",
-      "topics": []
+      "topics": [
+        "iterators"
+      ]
     },
     {
       "difficulty": 1,

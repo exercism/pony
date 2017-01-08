@@ -1,31 +1,19 @@
 use "collections"
+use "itertools"
 
-class Squares
-  let _max: U32
-
-  new create(max: U32) =>
-    _max = max + 1
-
-  fun square_of_sums(): U32 =>
-    var sum: U32 = 0
-    let rng: Range[U32] = Range[U32](1, _max)
-
-    while rng.has_next() do
-      sum = sum + rng.next()
-    end
-
+primitive Squares
+  fun square_of_sums(n: USize): USize =>
+    let sum = (n * (n + 1)) / 2
     sum * sum
 
-  fun sum_of_squares(): U32 =>
-    var sum: U32 = 0
-    let rng: Range[U32] = Range[U32](1, _max)
-
-    while rng.has_next() do
-      var t: U32 = rng.next()
-      sum = sum + (t * t)
+  fun sum_of_squares(n: USize): USize =>
+    try
+      Iter[USize](Range(0, n + 1))
+        .map[USize]({(x: USize): USize => x * x})
+        .fold[USize]({(acc: USize, x: USize): USize => acc + x}, 0)
+    else
+      0
     end
 
-    sum
-
-  fun difference(): U32 =>
-    square_of_sums() - sum_of_squares()
+  fun difference(n: USize): USize =>
+    square_of_sums(n) - sum_of_squares(n)
