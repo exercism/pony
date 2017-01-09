@@ -57,7 +57,11 @@
     {
       "difficulty": 1,
       "slug": "rna-transcription",
-      "topics": []
+      "topics": [
+        "strings",
+        "errors",
+        "iterators"
+      ]
     }
   ]
 }
