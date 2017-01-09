@@ -1,73 +1,17 @@
-use "ponytest"
+use "collections"
+use "itertools"
 
-class Anagram
+primitive Anagram
+  fun apply(word: String, phrase: Array[String]): Array[String] =>
+    let lower: String = word.lower()
+    let sorted = _strsort(lower)
 
-  fun apply(word: String, phrase: Array[String]): Array[String] ?  =>
-    let anagrams: Array[String] = Array[String]
-    let word_array: Array[U8] = _to_array_and_order(word.lower())
+    Iter[String](phrase.values())
+      .filter({(s: String)(lower, sorted): Bool =>
+        let lower': String = s.lower()
+        (lower != lower') and (sorted == Anagram._strsort(lower'))
+      })
+      .collect[Array[String] iso](recover Array[String] end)
 
-
-    for (index, value) in phrase.pairs() do
-      let value_array: Array[U8] = _to_array_and_order(value.lower())
-
-      if value.size() != word.size() then continue end
-      if value.lower() == word.lower() then continue end
-      if _check_array_eq(word_array, value_array) then
-        anagrams.push(value)
-      end
-    end
-
-    anagrams
-
-  fun _to_array_and_order(word: String): Array[U8] ? =>
-    // As of right now the String.split() function doesn't appear to work
-    // on no delimiter, i.e. "abcd".split("") to ["a", "b", "c", "d"]
-    // So I pull of the bytes
-
-    let word_array: Array[U8] = Array[U8]
-    let sorted_array: Array[U8] = Array[U8]
-
-    for value in word.values() do
-      word_array.push(value)
-    end
-
-
-    for (index, value) in word_array.pairs() do
-      var inserted = false
-      if (index == 0) then sorted_array.push(value) end
-      if (index > 0) then
-        for (i, v) in sorted_array.pairs() do
-          if value <= v then
-            sorted_array.insert(i, value)
-            inserted = true
-            break
-          end
-        end
-        if not inserted then
-          sorted_array.push(value)
-          inserted = false
-        end
-      end
-    end
-
-    sorted_array
-
-  // https://github.com/ponylang/ponyc/blob/master/packages/ponytest/helper.pony#L163-L188
-  // there isn't a join function as of 2.1, and Array doesn't support eq()
-  fun _check_array_eq(expect: Array[U8], actual: Array[U8]): Bool ? =>
-    var ok = true
-
-    if expect.size() != actual.size() then
-      ok = false
-    else
-      var i: USize = 0
-      while i < expect.size() do
-        if expect(i) != actual(i) then
-          ok = false
-          break
-        end
-
-        i = i + 1
-      end
-    end
-    ok
+  fun _strsort(s: String): String =>
+    String.from_array(recover Sort[Array[U8], U8](s.array().clone()) end)

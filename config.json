@@ -49,7 +49,10 @@
     {
       "difficulty": 1,
       "slug": "anagram",
-      "topics": []
+      "topics": [
+        "reference capabilities",
+        "strings"
+      ]
     },
     {
       "difficulty": 1,
