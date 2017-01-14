@@ -4,21 +4,12 @@ actor Main is TestList
   new create(env: Env) =>
     PonyTest(env, this)
 
-  new make() =>
-    None
-
   fun tag tests(test: PonyTest) =>
     test(_TestHelloWorld)
 
 class iso _TestHelloWorld is UnitTest
-  """
-  Test HelloWorld package
-  """
   fun name(): String => "hello-world/HelloWorld"
 
   fun apply(h: TestHelper) =>
-    let hello: HelloWorld = HelloWorld.create()
-
-    h.assert_eq[String]("Hello, World!", hello.say_hello())
-    h.assert_eq[String]("Hello, Exercism!", hello.say_hello("Exercism"))
-
+    h.assert_eq[String]("Hello, World!", HelloWorld.hello())
+    h.assert_eq[String]("Hello, Exercism!", HelloWorld.hello("Exercism"))

@@ -3,53 +3,65 @@
   "language": "Pony",
   "repository": "https://github.com/exercism/xpony",
   "active": false,
-  "test_pattern": "TODO",
-  "deprecated": [
-
-  ],
   "ignored": [
     "bin",
     "docs",
     "img"
   ],
-  "foregone": [
-
-  ],
   "exercises": [
     {
       "difficulty": 1,
       "slug": "hello-world",
-      "topics": []
+      "topics": [
+        "strings",
+        "default arguments"
+      ]
     },
     {
       "difficulty": 1,
       "slug": "difference-of-squares",
-      "topics": []
+      "topics": [
+        "iterators"
+      ]
     },
     {
       "difficulty": 1,
       "slug": "bob",
-      "topics": []
+      "topics": [
+        "strings"
+      ]
     },
     {
       "difficulty": 1,
       "slug": "hamming",
-      "topics": []
+      "topics": [
+        "errors"
+      ]
     },
     {
       "difficulty": 1,
       "slug": "leap",
-      "topics": []
+      "topics": [
+        "math",
+        "booleans"
+      ]
     },
     {
       "difficulty": 1,
       "slug": "anagram",
-      "topics": []
+      "topics": [
+        "reference capabilities",
+        "strings"
+      ]
     },
     {
       "difficulty": 1,
       "slug": "rna-transcription",
-      "topics": []
+      "topics": [
+        "strings",
+        "errors",
+        "iterators"
+      ]
     }
   ]
 }

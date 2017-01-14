@@ -4,28 +4,21 @@ actor Main is TestList
   new create(env: Env) =>
     PonyTest(env, this)
 
-  new make() =>
-    None
-
   fun tag tests(test: PonyTest) =>
     test(_TestSquares)
 
 class iso _TestSquares is UnitTest
-  """
-  Test Difference of Squares package
-  """
-
   fun name(): String => "difference-of-squares/Squares"
 
   fun apply(h: TestHelper) =>
-    h.assert_eq[U32](225, Squares(5).square_of_sums())
-    h.assert_eq[U32](55, Squares(5).sum_of_squares())
-    h.assert_eq[U32](170, Squares(5).difference())
+    h.assert_eq[USize](225, Squares.square_of_sums(5))
+    h.assert_eq[USize](55, Squares.sum_of_squares(5))
+    h.assert_eq[USize](170, Squares.difference(5))
 
-    h.assert_eq[U32](3025, Squares(10).square_of_sums())
-    h.assert_eq[U32](385, Squares(10).sum_of_squares())
-    h.assert_eq[U32](2640, Squares(10).difference())
+    h.assert_eq[USize](3025, Squares.square_of_sums(10))
+    h.assert_eq[USize](385, Squares.sum_of_squares(10))
+    h.assert_eq[USize](2640, Squares.difference(10))
 
-    h.assert_eq[U32](25502500, Squares(100).square_of_sums())
-    h.assert_eq[U32](338350, Squares(100).sum_of_squares())
-    h.assert_eq[U32](25164150, Squares(100).difference())
+    h.assert_eq[USize](25502500, Squares.square_of_sums(100))
+    h.assert_eq[USize](338350, Squares.sum_of_squares(100))
+    h.assert_eq[USize](25164150, Squares.difference(100))

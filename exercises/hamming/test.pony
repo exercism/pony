@@ -4,37 +4,23 @@ actor Main is TestList
   new create(env: Env) =>
     PonyTest(env, this)
 
-  new make() =>
-    None
-
   fun tag tests(test: PonyTest) =>
-    test(_HammingDistanceTest)
-    test(_HammingParamTest)
+    test(_TestHammingDistance)
 
-class iso _HammingDistanceTest is UnitTest
-  """
-  Test Hamming package returns the right distance
-  """
-  fun name(): String => "hamming/Hamming"
+class iso _TestHammingDistance is UnitTest
+  fun name(): String => "hamming/HammingDistance"
 
-  fun apply(h: TestHelper): None ? =>
-    h.assert_eq[U8](0, Hamming("A", "A"))
-    h.assert_eq[U8](0, Hamming("GGACTGA", "GGACTGA"))
-    h.assert_eq[U8](1, Hamming("A", "G"))
-    h.assert_eq[U8](2, Hamming("AG", "CT"))
-    h.assert_eq[U8](1, Hamming("AT", "CT"))
-    h.assert_eq[U8](1, Hamming("GGACG", "GGTCG"))
-    h.assert_eq[U8](2, Hamming("ACCAGGG", "ACTATGG"))
-    h.assert_eq[U8](1, Hamming("AGG", "AGA"))
-    h.assert_eq[U8](4, Hamming("GATACA", "GCATAA"))
-    h.assert_eq[U8](9, Hamming("GGACGGATTCTG", "AGGACGGATTCT"))
+  fun apply(h: TestHelper) ? =>
+    h.assert_eq[USize](0, HammingDistance("A", "A"))
+    h.assert_eq[USize](0, HammingDistance("GGACTGA", "GGACTGA"))
+    h.assert_eq[USize](1, HammingDistance("A", "G"))
+    h.assert_eq[USize](2, HammingDistance("AG", "CT"))
+    h.assert_eq[USize](1, HammingDistance("AT", "CT"))
+    h.assert_eq[USize](1, HammingDistance("GGACG", "GGTCG"))
+    h.assert_eq[USize](2, HammingDistance("ACCAGGG", "ACTATGG"))
+    h.assert_eq[USize](1, HammingDistance("AGG", "AGA"))
+    h.assert_eq[USize](4, HammingDistance("GATACA", "GCATAA"))
+    h.assert_eq[USize](9, HammingDistance("GGACGGATTCTG", "AGGACGGATTCT"))
 
- class iso _HammingParamTest is UnitTest
-  """
-  Test Hamming package returns the right distance
-  """
-  fun name(): String => "hamming/Hamming"
-
-  fun apply(h: TestHelper) =>
-    h.assert_error({()? => Hamming("GAT", "GA")})
-    h.assert_error({()? => Hamming("GA", "GAC")})
+    h.assert_error({()? => HammingDistance("GAT", "GA")})
+    h.assert_error({()? => HammingDistance("GA", "GAC")})
