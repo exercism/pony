@@ -10,57 +10,66 @@
   ],
   "exercises": [
     {
-      "difficulty": 1,
       "slug": "hello-world",
+      "difficulty": 1,
       "topics": [
         "strings",
         "default arguments"
       ]
     },
     {
-      "difficulty": 1,
       "slug": "difference-of-squares",
+      "difficulty": 1,
       "topics": [
         "iterators"
       ]
     },
     {
-      "difficulty": 1,
       "slug": "bob",
+      "difficulty": 1,
       "topics": [
         "strings"
       ]
     },
     {
-      "difficulty": 1,
       "slug": "hamming",
+      "difficulty": 1,
       "topics": [
         "errors"
       ]
     },
     {
-      "difficulty": 1,
       "slug": "leap",
+      "difficulty": 1,
       "topics": [
         "math",
         "booleans"
       ]
     },
     {
-      "difficulty": 1,
       "slug": "anagram",
+      "difficulty": 1,
       "topics": [
         "reference capabilities",
         "strings"
       ]
     },
     {
-      "difficulty": 1,
       "slug": "rna-transcription",
+      "difficulty": 1,
       "topics": [
         "strings",
         "errors",
         "iterators"
+      ]
+    },
+    {
+      "slug": "roman-numerals",
+      "difficulty": 2,
+      "topics": [
+        "strings",
+        "errors",
+        "math"
       ]
     }
   ]
