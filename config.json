@@ -79,6 +79,14 @@
         "strings",
         "match"
       ]
+    },
+    {
+      "slug": "atbash-cipher",
+      "difficulty": 1,
+      "topics": [
+        "strings",
+        "iterators"
+      ]
     }
   ]
 }
