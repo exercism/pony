@@ -8,7 +8,7 @@ actor Main is TestList
     test(_TestRNATrancription)
 
 class iso _TestRNATrancription is UnitTest
-  fun name(): String => "rna-transcription"
+  fun name(): String => "rna-transcription/ToRNA"
 
   fun apply(h: TestHelper) ? =>
     let tests = [
