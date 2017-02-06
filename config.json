@@ -71,6 +71,14 @@
         "errors",
         "math"
       ]
+    },
+    {
+      "slug": "beer-song",
+      "difficulty": 1,
+      "topics": [
+        "strings",
+        "match"
+      ]
     }
   ]
 }
