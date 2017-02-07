@@ -87,6 +87,15 @@
         "strings",
         "iterators"
       ]
+    },
+    {
+      "slug": "pascals-triangle",
+      "difficulty": 1,
+      "topics": [
+        "math",
+        "iterators",
+        "arrays"
+      ]
     }
   ]
 }
