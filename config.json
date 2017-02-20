@@ -13,8 +13,8 @@
       "slug": "hello-world",
       "difficulty": 1,
       "topics": [
-        "strings",
-        "default arguments"
+        "primitives",
+        "methods"
       ]
     },
     {
