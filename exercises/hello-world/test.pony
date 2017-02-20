@@ -12,4 +12,3 @@ class iso _TestHelloWorld is UnitTest
 
   fun apply(h: TestHelper) =>
     h.assert_eq[String]("Hello, World!", HelloWorld.hello())
-    h.assert_eq[String]("Hello, Exercism!", HelloWorld.hello("Exercism"))
