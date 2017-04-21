@@ -1,5 +1,13 @@
 #!/bin/bash
 
+sudo apt-get update -q
+sudo apt-get install -y python-software-properties
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+sudo apt-get update -q
+sudo apt-get install -y \
+	wget git apt-transport-https g++-5 build-essential \
+	zlib1g-dev libncurses5-dev libssl-dev llvm-3.8
+
 # Install pcre2 (uncomment if regex package is ever used)
 # wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre2-10.21.tar.bz2
 # tar -xjvf pcre2-10.21.tar.bz2
