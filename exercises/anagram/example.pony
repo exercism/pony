@@ -11,7 +11,7 @@ primitive Anagram
         let lower': String = s.lower()
         (lower != lower') and (sorted == Anagram._strsort(lower'))
       })
-      .collect[Array[String] iso](recover Array[String] end)
+      .collect(Array[String])
 
   fun _strsort(s: String): String =>
     String.from_array(recover Sort[Array[U8], U8](s.array().clone()) end)

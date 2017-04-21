@@ -11,7 +11,7 @@ class iso _AnagramTest is UnitTest
   fun name(): String => "anagram/Anagram"
 
   fun apply(h: TestHelper) =>
-    let anagrams =  ["banana", "bob", "sent", "sale", "ales"]
+    let anagrams =  ["banana"; "bob"; "sent"; "sale"; "ales"]
     let empty = Array[String]
 
     // Anagram should return an empty array if there are no anagrams
@@ -25,4 +25,4 @@ class iso _AnagramTest is UnitTest
     // Anagram should be case insensitive
     h.assert_array_eq[String](["sent"], Anagram("nETs", anagrams))
     // Anagram should return multiple anagrams
-    h.assert_array_eq[String](["sale", "ales"], Anagram("seal", anagrams))
+    h.assert_array_eq[String](["sale"; "ales"], Anagram("seal", anagrams))

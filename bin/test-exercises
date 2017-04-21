@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO run tests in parallel (like Pony stdlib)
+
 set -eu
 
 run_tests() {

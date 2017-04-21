@@ -34,7 +34,9 @@ primitive Atbash
     end
 
   fun decode(input: String): String iso^ =>
-    Iter[U8](input.values())
-      .filter({(c: U8): Bool => c != ' '})
-      .map[U8](this~_transpose())
-      .collect[String iso](recover String end)
+    recover
+      Iter[U8](input.values())
+        .filter({(c: U8): Bool => c != ' '})
+        .map[U8](this~_transpose())
+        .collect[String ref](String)
+    end

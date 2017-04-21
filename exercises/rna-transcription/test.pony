@@ -13,13 +13,13 @@ class iso _TestRNATrancription is UnitTest
   fun apply(h: TestHelper) ? =>
     let tests = [
       // rna complement of cytosine is guanine
-      ("C", "G"),
+      ("C", "G")
       // rna complement of guanine is cytosine
-      ("G", "C"),
+      ("G", "C")
       // rna complement of thymine is adenine
-      ("T", "A"),
+      ("T", "A")
       // rna complement of adenine is uracil
-      ("A", "U"),
+      ("A", "U")
       // rna complement
       ("ACGTGGTCTTAA", "UGCACCAGAAUU")
     ]
