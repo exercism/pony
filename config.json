@@ -6,7 +6,8 @@
   "ignored": [
     "bin",
     "docs",
-    "img"
+    "img",
+    "ponyc"
   ],
   "exercises": [
     {
