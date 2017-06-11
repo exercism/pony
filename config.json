@@ -3,12 +3,6 @@
   "language": "Pony",
   "repository": "https://github.com/exercism/xpony",
   "active": false,
-  "ignored": [
-    "bin",
-    "docs",
-    "img",
-    "ponyc"
-  ],
   "exercises": [
     {
       "slug": "hello-world",
