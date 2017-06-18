@@ -1,6 +1,6 @@
-# xPony
+# Exercism Pony Track
 
-[![Build Status](https://travis-ci.org/exercism/xpony.svg?branch=master)](https://travis-ci.org/exercism/xpony)
+[![Build Status](https://travis-ci.org/exercism/pony.svg?branch=master)](https://travis-ci.org/exercism/pony)
 
 Exercism exercises in Pony.
 
