@@ -5,8 +5,8 @@ sudo apt-get install -y python-software-properties
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt-get update -q
 sudo apt-get install -y \
-	wget git apt-transport-https g++-5 build-essential \
-	zlib1g-dev libncurses5-dev libssl-dev llvm-3.8
+	wget git apt-transport-https clang-3.9 build-essential \
+	zlib1g-dev libncurses5-dev libssl-dev llvm-3.9
 
 # Install pcre2 (uncomment if regex package is ever used)
 # wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre2-10.21.tar.bz2
@@ -16,4 +16,5 @@ sudo apt-get install -y \
 
 # Insall ponyc
 git clone "https://github.com/ponylang/ponyc"
-cd ponyc && make && sudo make install && cd -
+git checkout release
+cd ponyc && make CC=clang-3.9 CXX=clang++-3.9 && sudo make install && cd -
