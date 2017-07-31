@@ -10,7 +10,7 @@ primitive Squares
     try
       Iter[USize](Range(0, n + 1))
         .map[USize]({(x: USize): USize => x * x})
-        .fold[USize]({(acc: USize, x: USize): USize => acc + x}, 0)
+        .fold[USize]({(acc: USize, x: USize): USize => acc + x}, 0)?
     else
       0
     end

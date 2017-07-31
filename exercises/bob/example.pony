@@ -27,7 +27,7 @@ primitive Bob
 
   fun _question(phrase: String): Bool =>
     try
-      Iter[U8](phrase.values()).last() == '?'
+      Iter[U8](phrase.values()).last()? == '?'
     else
       false
     end

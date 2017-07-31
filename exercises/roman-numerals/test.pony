@@ -35,11 +35,11 @@ class iso _TestRomanNumerals is UnitTest
 
     for test in tests.values() do
       try
-        h.assert_eq[String](RomanNumerals(test._1), test._2)
+        h.assert_eq[String](RomanNumerals(test._1)?, test._2)
       else
         h.fail()
       end
     end
 
-    h.assert_error({() ? => RomanNumerals(-1)})
-    h.assert_error({() ? => RomanNumerals(4000)})
+    h.assert_error({() ? => RomanNumerals(-1)?})
+    h.assert_error({() ? => RomanNumerals(4000)?})

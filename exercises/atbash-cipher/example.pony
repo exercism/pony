@@ -13,7 +13,7 @@ primitive Atbash
 
   fun _group(groups: Array[String ref], c: U8): Array[String ref]^ =>
     let last_idx = groups.size() - 1
-    let last = try groups(last_idx) else String end
+    let last = try groups(last_idx)? else String end
     if last.size() < 5 then
       last.push(c)
     else
@@ -28,7 +28,7 @@ primitive Atbash
         Iter[U8](input.lower().values())
           .filter(this~_transposable())
           .map[U8]({(c: U8): U8 => Atbash._transpose(c)})
-          .fold[Array[String ref]](this~_group(), [String(6)]))
+          .fold[Array[String ref]](this~_group(), [String(6)])?)
     else
       recover String end
     end

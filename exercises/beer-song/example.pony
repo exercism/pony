@@ -38,7 +38,7 @@ primitive BeerSong
         Iter[USize](Reverse(start, stop))
           .map[String]({(n: USize): String => BeerSong.verse(n) + "\n"})
           .collect(Array[String](start - stop)))
-        .>pop()
+        .>pop()?
     else
       recover String end
     end

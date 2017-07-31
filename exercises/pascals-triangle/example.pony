@@ -11,7 +11,7 @@ primitive PascalsTriangle
     let r = Array[USize](n).>push(1)
     for i in Range(1, n + 1) do
       try
-        let last = r(i - 1)
+        let last = r(i - 1)?
         r.push((last * ((n + 1) - i)) / i)
       end
     end
