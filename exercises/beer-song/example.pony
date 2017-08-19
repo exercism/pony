@@ -23,12 +23,12 @@ primitive BeerSong
       let ns: String = n.string()
       let ns': String = (n - 1).string()
       recover String
-        .>append(ns)
-        .>append(" bottles of beer on the wall, ")
-        .>append(ns)
-        .>append(" bottles of beer.\nTake one down and pass it around, ")
-        .>append(ns')
-        .>append(" bottles of beer on the wall.\n")
+        .> append(ns)
+        .> append(" bottles of beer on the wall, ")
+        .> append(ns)
+        .> append(" bottles of beer.\nTake one down and pass it around, ")
+        .> append(ns')
+        .> append(" bottles of beer on the wall.\n")
       end
     end
 
@@ -36,9 +36,10 @@ primitive BeerSong
     try
       String.join(
         Iter[USize](Reverse(start, stop))
-          .map[String]({(n: USize): String => BeerSong.verse(n) + "\n"})
-          .collect(Array[String](start - stop)))
-        .>pop()?
+          .map[String]({(n: USize): String => BeerSong.verse(n) + "\n" })
+          .collect(Array[String](start - stop))
+          .values())
+        .> pop()?
     else
       recover String end
     end

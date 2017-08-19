@@ -13,7 +13,7 @@ primitive Bob
     end
 
   fun _silent(phrase: String): Bool =>
-    phrase.clone().>strip() == ""
+    phrase.clone() .> strip() == ""
 
   fun _loud(phrase: String): Bool =>
     Iter[U8](phrase.values()).all(this~_not_lowercase())

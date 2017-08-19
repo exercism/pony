@@ -7,5 +7,5 @@ primitive HammingDistance
     
     Iter[U8](strand1.values())
       .zip[U8](strand2.values())
-      .filter({(t: (U8, U8)): Bool => t._1 != t._2})
+      .filter({(t: (U8, U8)): Bool => t._1 != t._2 })
       .count()

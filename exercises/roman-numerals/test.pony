@@ -41,5 +41,5 @@ class iso _TestRomanNumerals is UnitTest
       end
     end
 
-    h.assert_error({() ? => RomanNumerals(-1)?})
-    h.assert_error({() ? => RomanNumerals(4000)?})
+    h.assert_error({() ? => RomanNumerals(-1)? })
+    h.assert_error({() ? => RomanNumerals(4000)? })
