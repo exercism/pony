@@ -22,5 +22,5 @@ class iso _TestHammingDistance is UnitTest
     h.assert_eq[USize](4, HammingDistance("GATACA", "GCATAA")?)
     h.assert_eq[USize](9, HammingDistance("GGACGGATTCTG", "AGGACGGATTCT")?)
 
-    h.assert_error({()? => HammingDistance("GAT", "GA")?})
-    h.assert_error({()? => HammingDistance("GA", "GAC")?})
+    h.assert_error({()? => HammingDistance("GAT", "GA")? })
+    h.assert_error({()? => HammingDistance("GA", "GAC")? })

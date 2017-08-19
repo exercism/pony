@@ -18,7 +18,7 @@ primitive Atbash
       last.push(c)
     else
       last.push(' ')
-      groups.push(String(6).>push(c))
+      groups.push(String(6) .> push(c))
     end
     groups
 
@@ -27,8 +27,9 @@ primitive Atbash
       String.join(
         Iter[U8](input.lower().values())
           .filter(this~_transposable())
-          .map[U8]({(c: U8): U8 => Atbash._transpose(c)})
-          .fold[Array[String ref]](this~_group(), [String(6)])?)
+          .map[U8]({(c: U8): U8 => Atbash._transpose(c) })
+          .fold[Array[String ref]](this~_group(), [String(6)])?
+          .values())
     else
       recover String end
     end

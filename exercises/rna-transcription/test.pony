@@ -28,5 +28,5 @@ class iso _TestRNATrancription is UnitTest
       h.assert_eq[String](ToRNA(input)?, expected)
     end
 
-    h.assert_error({() ? => ToRNA("U")?})
-    h.assert_error({() ? => ToRNA("ACGTXXXCTTAA")?})
+    h.assert_error({() ? => ToRNA("U")? })
+    h.assert_error({() ? => ToRNA("ACGTXXXCTTAA")? })
