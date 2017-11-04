@@ -7,13 +7,9 @@ primitive Squares
     sum * sum
 
   fun sum_of_squares(n: USize): USize =>
-    try
-      Iter[USize](Range(0, n + 1))
-        .map[USize]({(x: USize): USize => x * x })
-        .fold[USize]({(acc: USize, x: USize): USize => acc + x }, 0)?
-    else
-      0
-    end
+    Iter[USize](Range(0, n + 1))
+      .map[USize]({(x: USize): USize => x * x })
+      .fold[USize](0, {(acc: USize, x: USize): USize => acc + x })
 
   fun difference(n: USize): USize =>
     square_of_sums(n) - sum_of_squares(n)
