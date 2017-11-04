@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/exercism/pony.svg?branch=master)](https://travis-ci.org/exercism/pony)
 
-Exercism exercises in Pony.
+Exercism exercises in [Pony](https://www.ponylang.org/).
 
 ## Contributing Guide
 
