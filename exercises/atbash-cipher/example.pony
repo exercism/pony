@@ -23,16 +23,12 @@ primitive Atbash
     groups
 
   fun encode(input: String): String iso^ =>
-    try
-      String.join(
-        Iter[U8](input.lower().values())
-          .filter(this~_transposable())
-          .map[U8]({(c: U8): U8 => Atbash._transpose(c) })
-          .fold[Array[String ref]](this~_group(), [String(6)])?
-          .values())
-    else
-      recover String end
-    end
+    String.join(
+      Iter[U8](input.lower().values())
+        .filter(this~_transposable())
+        .map[U8]({(c: U8): U8 => Atbash._transpose(c) })
+        .fold[Array[String ref]]([String(6)], this~_group())
+        .values())
 
   fun decode(input: String): String iso^ =>
     recover
