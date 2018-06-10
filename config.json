@@ -1,21 +1,22 @@
 {
   "language": "Pony",
   "active": false,
+  "blurb": "",
   "exercises": [
     {
-      "uuid": "cc5f77d1-b94d-4a05-b205-08eaa00bf49e",
       "slug": "hello-world",
+      "uuid": "cc5f77d1-b94d-4a05-b205-08eaa00bf49e",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "primitives",
-        "methods"
+        "methods",
+        "primitives"
       ]
     },
     {
-      "uuid": "f0bcb245-9e02-476c-9470-5f41c9358960",
       "slug": "difference-of-squares",
+      "uuid": "f0bcb245-9e02-476c-9470-5f41c9358960",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
@@ -24,8 +25,8 @@
       ]
     },
     {
-      "uuid": "3b11a07d-1d32-4dc1-b580-7ceaefa5ddd6",
       "slug": "bob",
+      "uuid": "3b11a07d-1d32-4dc1-b580-7ceaefa5ddd6",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
@@ -34,8 +35,8 @@
       ]
     },
     {
-      "uuid": "c2f970d3-810c-4504-8592-f523b1d61cbb",
       "slug": "hamming",
+      "uuid": "c2f970d3-810c-4504-8592-f523b1d61cbb",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
@@ -44,83 +45,83 @@
       ]
     },
     {
-      "uuid": "f4174500-ae74-499a-9f7b-638238a28843",
       "slug": "leap",
+      "uuid": "f4174500-ae74-499a-9f7b-638238a28843",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "math",
-        "booleans"
-      ]
-    },
-    {
-      "uuid": "4471c6ee-1dfa-4520-99fb-aa1f9a543053",
-      "slug": "anagram",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "reference capabilities",
-        "strings"
-      ]
-    },
-    {
-      "uuid": "27087d27-8ca9-48e7-af64-fda35af114f4",
-      "slug": "rna-transcription",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "strings",
-        "errors",
-        "iterators"
-      ]
-    },
-    {
-      "uuid": "94829aed-9496-47d4-b43d-ad2f3ea2a839",
-      "slug": "roman-numerals",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "strings",
-        "errors",
+        "booleans",
         "math"
       ]
     },
     {
-      "uuid": "fc48383d-9e1c-49a0-955f-b14bcbd3e801",
-      "slug": "beer-song",
+      "slug": "anagram",
+      "uuid": "4471c6ee-1dfa-4520-99fb-aa1f9a543053",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "strings",
-        "match"
+        "reference_capabilities",
+        "strings"
       ]
     },
     {
-      "uuid": "bd0cb4f4-b1d9-412f-ac35-c4b4136260d7",
-      "slug": "atbash-cipher",
+      "slug": "rna-transcription",
+      "uuid": "27087d27-8ca9-48e7-af64-fda35af114f4",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "strings",
-        "iterators"
-      ]
-    },
-    {
-      "uuid": "bb3fa1fd-6472-4806-bd1f-642541437d40",
-      "slug": "pascals-triangle",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "math",
+        "errors",
         "iterators",
-        "arrays"
+        "strings"
+      ]
+    },
+    {
+      "slug": "roman-numerals",
+      "uuid": "94829aed-9496-47d4-b43d-ad2f3ea2a839",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "errors",
+        "math",
+        "strings"
+      ]
+    },
+    {
+      "slug": "beer-song",
+      "uuid": "fc48383d-9e1c-49a0-955f-b14bcbd3e801",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "match",
+        "strings"
+      ]
+    },
+    {
+      "slug": "atbash-cipher",
+      "uuid": "bd0cb4f4-b1d9-412f-ac35-c4b4136260d7",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "iterators",
+        "strings"
+      ]
+    },
+    {
+      "slug": "pascals-triangle",
+      "uuid": "bb3fa1fd-6472-4806-bd1f-642541437d40",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "arrays",
+        "iterators",
+        "math"
       ]
     }
   ]
