@@ -22,7 +22,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "iterators"
+        "iterators",
+        "math"
       ]
     },
     {
@@ -52,8 +53,7 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "booleans",
-        "math"
+        "booleans"
       ]
     },
     {
@@ -87,7 +87,6 @@
       "difficulty": 2,
       "topics": [
         "errors",
-        "math",
         "strings"
       ]
     },
