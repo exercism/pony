@@ -1,20 +1,14 @@
 #!/bin/bash
 
-sudo apt-get update -q
-sudo apt-get install -y python-software-properties
-sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-sudo apt-get update -q
-sudo apt-get install -y \
-	wget git apt-transport-https clang-3.9 build-essential \
-	zlib1g-dev libncurses5-dev libssl-dev llvm-3.9
+sudo apt-get install \
+     apt-transport-https \
+     ca-certificates \
+     curl \
+     gnupg2 \
+     software-properties-common
 
-# Install pcre2 (uncomment if regex package is ever used)
-# wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre2-10.21.tar.bz2
-# tar -xjvf pcre2-10.21.tar.bz2
-# cd pcre2-10.21 && ./configure --prefix=/usr && make && sudo make install && cd -
-# rm -r pcre2-10.21
-
-# Insall ponyc
-git clone "https://github.com/ponylang/ponyc"
-git checkout release
-cd ponyc && make CC=clang-3.9 CXX=clang++-3.9 && sudo make install && cd -
+# Install ponyc
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E04F0923 B3B48BDA
+sudo add-apt-repository "deb https://dl.bintray.com/pony-language/ponylang-debian  $(lsb_release -cs) main"
+sudo apt-get update
+sudo apt-get -V install ponyc
