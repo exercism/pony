@@ -24,7 +24,9 @@ jobs:
       #       zlib1g-dev libncurses5-dev libssl-dev llvm-3.9
           
       - name: Install ponyup
-        run: bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ponylang/ponyup/latest-release/ponyup-init.sh)"
+        run: |
+          bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ponylang/ponyup/latest-release/ponyup-init.sh)"
+          echo $HOME/.local/share/ponyup/bin >> $GITHUB_PATH
         
       - name: Install ponyc
         run: ponyup update ponyc release
