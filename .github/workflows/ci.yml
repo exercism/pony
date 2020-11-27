@@ -1,0 +1,33 @@
+name: pony / main
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # - name: Install project dependencies
+      #   run: |
+      #     apt-get update -q
+      #     apt-get install -y python-software-properties
+      #     add-apt-repository-y ppa:ubuntu-toolchain-r/test
+      #     apt-get update -q
+      #     apt-get install -y \
+      #       wget git apt-transport-https clang-3.9 build-essential \
+      #       zlib1g-dev libncurses5-dev libssl-dev llvm-3.9
+          
+      - name: Install ponyup
+        run: sh -c "$(curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ponylang/ponyup/latest-release/ponyup-init.sh)"
+        
+      - name: Install ponyc
+        run: ponyup update ponyc release
+
+      - name: Run exercism/pony ci (runs tests) for all exercises
+        run: bin/test-exercises
