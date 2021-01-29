@@ -2,6 +2,7 @@
   "language": "Pony",
   "active": false,
   "blurb": "",
+  "version": 3,
   "exercises": [
     {
       "slug": "hello-world",
