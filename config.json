@@ -1,5 +1,6 @@
 {
   "language": "Pony",
+  "slug": "pony",
   "active": false,
   "status": {
     "concept_exercises": false,
