@@ -1,4 +1,4 @@
-## Installing the Pony Compiler
+# Installing the Pony Compiler
 
 ### Homebrew on Mac OS X
 
