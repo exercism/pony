@@ -1,6 +1,7 @@
 # Exercism Pony Track
 
-[![Build Status](https://travis-ci.org/exercism/pony.svg?branch=master)](https://travis-ci.org/exercism/pony)
+[![Configlet Status](https://github.com/exercism/pony/workflows/configlet/badge.svg)]
+[![Exercise Test Status](https://github.com/exercism/pony/workflows/pony%20%2F%20main/badge.svg)]
 
 Exercism exercises in [Pony](https://www.ponylang.org/).
 
