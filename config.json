@@ -1,128 +1,171 @@
 {
   "language": "Pony",
+  "slug": "pony",
   "active": false,
+  "status": {
+    "concept_exercises": false,
+    "test_runner": false,
+    "representer": false,
+    "analyzer": false
+  },
   "blurb": "",
-  "exercises": [
-    {
-      "slug": "hello-world",
-      "uuid": "cc5f77d1-b94d-4a05-b205-08eaa00bf49e",
-      "core": false,
-      "auto_approve": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "methods",
-        "primitives"
-      ]
-    },
-    {
-      "slug": "difference-of-squares",
-      "uuid": "f0bcb245-9e02-476c-9470-5f41c9358960",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "iterators",
-        "math"
-      ]
-    },
-    {
-      "slug": "bob",
-      "uuid": "3b11a07d-1d32-4dc1-b580-7ceaefa5ddd6",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "strings"
-      ]
-    },
-    {
-      "slug": "hamming",
-      "uuid": "c2f970d3-810c-4504-8592-f523b1d61cbb",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "errors"
-      ]
-    },
-    {
-      "slug": "leap",
-      "uuid": "f4174500-ae74-499a-9f7b-638238a28843",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "booleans"
-      ]
-    },
-    {
-      "slug": "anagram",
-      "uuid": "4471c6ee-1dfa-4520-99fb-aa1f9a543053",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "reference_capabilities",
-        "strings"
-      ]
-    },
-    {
-      "slug": "rna-transcription",
-      "uuid": "27087d27-8ca9-48e7-af64-fda35af114f4",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "errors",
-        "iterators",
-        "strings"
-      ]
-    },
-    {
-      "slug": "roman-numerals",
-      "uuid": "94829aed-9496-47d4-b43d-ad2f3ea2a839",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "errors",
-        "strings"
-      ]
-    },
-    {
-      "slug": "beer-song",
-      "uuid": "fc48383d-9e1c-49a0-955f-b14bcbd3e801",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "match",
-        "strings"
-      ]
-    },
-    {
-      "slug": "atbash-cipher",
-      "uuid": "bd0cb4f4-b1d9-412f-ac35-c4b4136260d7",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "iterators",
-        "strings"
-      ]
-    },
-    {
-      "slug": "pascals-triangle",
-      "uuid": "bb3fa1fd-6472-4806-bd1f-642541437d40",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "arrays",
-        "iterators",
-        "math"
-      ]
-    }
-  ]
+  "version": 3,
+  "online_editor": {
+    "indent_style": "space",
+    "indent_size": 4,
+    "highlightjs_language": "pony"
+  },
+  "files": {
+    "solution": [
+      "%{snake_slug}.pony"
+    ],
+    "test": [
+      "test.pony"
+    ],
+    "example": [
+      "example.pony"
+    ],
+    "exemplar": [
+      ".meta/exemplar.pony"
+    ]
+  },
+  "exercises": {
+    "concept": [],
+    "practice": [
+      {
+        "slug": "anagram",
+        "name": "Anagram",
+        "uuid": "4471c6ee-1dfa-4520-99fb-aa1f9a543053",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "reference_capabilities",
+          "strings"
+        ]
+      },
+      {
+        "slug": "atbash-cipher",
+        "name": "Atbash Cipher",
+        "uuid": "bd0cb4f4-b1d9-412f-ac35-c4b4136260d7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "iterators",
+          "strings"
+        ]
+      },
+      {
+        "slug": "beer-song",
+        "name": "Beer Song",
+        "uuid": "fc48383d-9e1c-49a0-955f-b14bcbd3e801",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "match",
+          "strings"
+        ]
+      },
+      {
+        "slug": "bob",
+        "name": "Bob",
+        "uuid": "3b11a07d-1d32-4dc1-b580-7ceaefa5ddd6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings"
+        ]
+      },
+      {
+        "slug": "difference-of-squares",
+        "name": "Difference Of Squares",
+        "uuid": "f0bcb245-9e02-476c-9470-5f41c9358960",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "iterators",
+          "math"
+        ]
+      },
+      {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "c2f970d3-810c-4504-8592-f523b1d61cbb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "errors"
+        ]
+      },
+      {
+        "slug": "hello-world",
+        "name": "Hello World",
+        "uuid": "cc5f77d1-b94d-4a05-b205-08eaa00bf49e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "methods",
+          "primitives"
+        ]
+      },
+      {
+        "slug": "leap",
+        "name": "Leap",
+        "uuid": "f4174500-ae74-499a-9f7b-638238a28843",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "booleans"
+        ]
+      },
+      {
+        "slug": "pascals-triangle",
+        "name": "Pascals Triangle",
+        "uuid": "bb3fa1fd-6472-4806-bd1f-642541437d40",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "arrays",
+          "iterators",
+          "math"
+        ]
+      },
+      {
+        "slug": "rna-transcription",
+        "name": "Rna Transcription",
+        "uuid": "27087d27-8ca9-48e7-af64-fda35af114f4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "errors",
+          "iterators",
+          "strings"
+        ]
+      },
+      {
+        "slug": "roman-numerals",
+        "name": "Roman Numerals",
+        "uuid": "94829aed-9496-47d4-b43d-ad2f3ea2a839",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "errors",
+          "strings"
+        ]
+      }
+    ]
+  },
+  "concepts": [],
+  "key_features": [],
+  "tags": []
 }

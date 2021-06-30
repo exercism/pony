@@ -1,0 +1,17 @@
+{
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "authors": [],
+  "files": {
+    "solution": [
+      "atbash_cipher.pony"
+    ],
+    "test": [
+      "test.pony"
+    ],
+    "example": [
+      "example.pony"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Atbash"
+}

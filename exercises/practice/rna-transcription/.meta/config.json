@@ -1,0 +1,17 @@
+{
+  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
+  "authors": [],
+  "files": {
+    "solution": [
+      "rna_transcription.pony"
+    ],
+    "test": [
+      "test.pony"
+    ],
+    "example": [
+      "example.pony"
+    ]
+  },
+  "source": "Hyperphysics",
+  "source_url": "http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
+}

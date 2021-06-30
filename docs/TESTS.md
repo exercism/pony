@@ -1,4 +1,4 @@
-## Running tests
+# Running tests
 
 To compile and run the tests, just run the following in your exercise directory:
 ```bash

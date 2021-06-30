@@ -1,3 +1,5 @@
+# About
+
 [Pony](http://www.ponylang.org) is an object-oriented, actor-model, capabilities-secure programming language focused on geting stuff done.
 
 It's object-oriented because it has classes and objects, like Python, Java, C++, and many other languages. It's actor-model because it has actors (similar to Erlang or Akka). These behave like objects, but they can also execute code asynchronously. Actors make Pony awesome.
