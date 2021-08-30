@@ -19,7 +19,7 @@
       "test.pony"
     ],
     "example": [
-      "example.pony"
+      ".meta/example.pony"
     ]
   },
   "source": "This is an exercise to introduce users to using Exercism",

@@ -17,7 +17,7 @@
       "test.pony"
     ],
     "example": [
-      "example.pony"
+      ".meta/example.pony"
     ]
   },
   "source": "Inspired by the Extreme Startup game",
