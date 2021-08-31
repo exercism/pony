@@ -11,7 +11,7 @@
       "test.pony"
     ],
     "example": [
-      "example.pony"
+      ".meta/example.pony"
     ]
   },
   "source": "Hyperphysics",

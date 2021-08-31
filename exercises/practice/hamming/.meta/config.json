@@ -19,7 +19,7 @@
       "test.pony"
     ],
     "example": [
-      "example.pony"
+      ".meta/example.pony"
     ]
   },
   "source": "The Calculating Point Mutations problem at Rosalind",

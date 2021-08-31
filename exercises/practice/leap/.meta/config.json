@@ -19,7 +19,7 @@
       "test.pony"
     ],
     "example": [
-      "example.pony"
+      ".meta/example.pony"
     ]
   },
   "source": "JavaRanch Cattle Drive, exercise 3",

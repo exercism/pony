@@ -19,7 +19,7 @@
       "test.pony"
     ],
     "example": [
-      "example.pony"
+      ".meta/example.pony"
     ]
   },
   "source": "Problem 6 at Project Euler",

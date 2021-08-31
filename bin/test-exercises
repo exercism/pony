@@ -10,13 +10,14 @@ run_tests() {
   printf "\nRunning tests for %s\n\n" $base
   (
     cd $path
+    cp .meta/example.pony ${base/-/_}.pony
     ponyc -d -V0
     ./$base
     rm $base
   )
 }
 
-exercises_dir="exercises/*"
+exercises_dir="exercises/practice/*"
 
 for path in $exercises_dir; do
   [ -d "${path}" ] || continue
