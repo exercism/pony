@@ -8,11 +8,11 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "",
+  "blurb": "Pony is an open-source, object-oriented, actor-model, capabilities-secure, high-performance programming language.",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
-    "indent_size": 4,
+    "indent_size": 2,
     "highlightjs_language": "pony"
   },
   "files": {
@@ -166,6 +166,49 @@
     ]
   },
   "concepts": [],
-  "key_features": [],
-  "tags": []
+  "key_features": [
+    {
+      "title": "Concurrency",
+      "content": "Pony implements the Actor model to simplify concurrency",
+      "icon": "concurrency"
+    },
+    {
+      "title": "Really Type Safe",
+      "content": "Pony is REALLY type-safe. There's a mathematical proof and everything!",
+      "icon": "statically-typed"
+    },
+    {
+      "title": "Exception Safe",
+      "content": "There are no runtime exceptions. All exceptions have defined semantics and are ALWAYS caught",
+      "icon": "safe"
+    },
+    {
+      "title": "Data-race Free",
+      "content": "Pony has no locks or atomic operations. The typesystem ensures all operations are safe.",
+      "icon": "fast"
+    },
+    {
+      "title": "Capabilities Secure",
+      "content": "Pony doesn't trust supply-chains. Libraries can't touch the outside world without your permission",
+      "icon": "powerful"
+    },
+    {
+      "title": "Deadlock Free",
+      "content": "Pony has no locks, synchronous messages, or even a sleep command. No locks, no Deadlocks",
+      "icon": "fast"
+    }
+  ],
+  "tags": [
+    "paradigm/object_oriented",
+    "typing/static",
+    "typing/strong",
+    "execution_mode/compiled",
+    "platform/windows",
+    "platform/mac",
+    "platform/linux",
+    "runtime/standalone_executable",
+    "used_for/backends",
+    "used_for/financial_systems",
+    "used_for/scientific_calculations"
+  ]
 }

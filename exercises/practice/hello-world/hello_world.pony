@@ -1,2 +1,7 @@
 primitive HelloWorld
-  fun hello(): String => "Goodbye, Mars!"
+  fun hello(): String =>
+    """
+    Return the String "Hello World!"
+    """
+
+    "Goodbye, Mars!"
