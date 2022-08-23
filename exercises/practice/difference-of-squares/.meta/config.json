@@ -13,7 +13,7 @@
   ],
   "files": {
     "solution": [
-      "difference_of_squares.pony"
+      "difference_of-squares.pony"
     ],
     "test": [
       "test.pony"
