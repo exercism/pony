@@ -1,6 +1,6 @@
 # Debug
 
-To help with debugging you can use output to stdout using env.out.print().
+To help with debugging you can use output to stdout using `env.out.print()`.
 
 If your variable has a reference capability that isn't sendable (as required for env.out.print(), remember you can get a sendable version of your string by clone()ing your string.
 
