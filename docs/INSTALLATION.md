@@ -9,4 +9,4 @@ brew install ponyc
 
 ## Other Platforms
 
-Instructions for installing Pony can be found in the [ponyc installation](https://github.com/ponylang/ponyc/blob/master/README.md#installation)
+Instructions for installing Pony can be found in the [ponyc installation](https://github.com/ponylang/ponyc/blob/main/INSTALL.md).
