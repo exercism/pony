@@ -16,9 +16,13 @@ class iso _TestBobShout is UnitTest
   fun apply(h: TestHelper) =>
     let shout_resp: String = "Whoa, chill out!"
 
+    // Inputs we expect to respond with "Whoa, chill out!"
     h.assert_eq[String](shout_resp, Bob("WATCH OUT!"))
+    // Inputs we expect to respond with "Whoa, chill out!"
     h.assert_eq[String](shout_resp, Bob("WHAT THE HELL WERE YOU THINKING?"))
+    // Inputs we expect to respond with "Whoa, chill out!"
     h.assert_eq[String](shout_resp, Bob("1, 2, 3 GO!"))
+    // Inputs we expect to respond with "Whoa, chill out!"
     h.assert_eq[String](shout_resp, Bob("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"))
 
 class iso _TestBobQuestion is UnitTest
@@ -27,9 +31,13 @@ class iso _TestBobQuestion is UnitTest
   fun apply(h: TestHelper) =>
     let ques_resp: String = "Sure."
 
+    // Inputs we expect to respond with "Sure."
     h.assert_eq[String](ques_resp, Bob("Does this cryogenic chamber make me look fat?"))
+    // Inputs we expect to respond with "Sure."
     h.assert_eq[String](ques_resp, Bob("You are, what, like 15?"))
+    // Inputs we expect to respond with "Sure."
     h.assert_eq[String](ques_resp, Bob("4?"))
+    // Inputs we expect to respond with "Sure."
     h.assert_eq[String](ques_resp, Bob("Wait! Hang on. Are you going to be OK?"))
 
 class iso _TestBobSilent is UnitTest
@@ -38,7 +46,9 @@ class iso _TestBobSilent is UnitTest
   fun apply(h: TestHelper) =>
     let silent_resp: String = "Fine. Be that way!"
 
+    // Inputs we expect to respond with "Fine. Be that way!"
     h.assert_eq[String](silent_resp, Bob(""))
+    // Inputs we expect to respond with "Fine. Be that way!"
     h.assert_eq[String](silent_resp, Bob("   "))
 
 class iso _TestBobDefault is UnitTest
@@ -47,8 +57,14 @@ class iso _TestBobDefault is UnitTest
   fun apply(h: TestHelper) =>
     let default_resp: String = "Whatever."
 
+    // Inputs we expect to respond with "Whatever."
     h.assert_eq[String](default_resp, Bob("Tom-ay-to, tom-aaaah-to."))
+    // Inputs we expect to respond with "Whatever."
     h.assert_eq[String](default_resp, Bob("Let's go make out behind the gym!"))
+    // Inputs we expect to respond with "Whatever."
     h.assert_eq[String](default_resp, Bob("It's OK if you don't want to go to the DMV."))
+    // Inputs we expect to respond with "Whatever."
     h.assert_eq[String](default_resp, Bob("1, 2, 3"))
+    // Inputs we expect to respond with "Whatever."
     h.assert_eq[String](default_resp, Bob("Ending with ? means a question."))
+

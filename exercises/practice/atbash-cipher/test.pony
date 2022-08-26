@@ -31,6 +31,7 @@ class iso _TestAtbashEncode is UnitTest
         "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt")
     ]
     for (input, expected) in tests.values() do
+      // Testing encode(plaintext) results in the correct cyphertext.
       h.assert_eq[String](Atbash.encode(input), expected)
     end
 
@@ -49,5 +50,6 @@ class iso _TestAtbashDecode is UnitTest
         "thequickbrownfoxjumpsoverthelazydog")
     ]
     for (input, expected) in tests.values() do
+      // Testing decode(cyphertext) results in the correct plaintext.
       h.assert_eq[String](Atbash.decode(input), expected)
     end
