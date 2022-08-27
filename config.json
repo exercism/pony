@@ -3,11 +3,18 @@
   "slug": "pony",
   "active": false,
   "status": {
-    "concept_exercises": false,
+    "concept_exercises": true,
     "test_runner": false,
     "representer": false,
     "analyzer": false
   },
+  "concepts": [
+     {
+       "uuid": "3e6e4a21-cc66-4c48-857b-90e1ca5298f9",
+       "slug": "basics-1",
+       "name": "Basics 1"
+     }
+  ],
   "blurb": "Pony is an open-source, object-oriented, actor-model, capabilities-secure, high-performance programming language.",
   "version": 3,
   "online_editor": {
@@ -30,7 +37,18 @@
     ]
   },
   "exercises": {
-    "concept": [],
+    "concept": [
+      {
+        "slug": "lucians-luscious-lasagna",
+        "name": "Lucian's Luscious Lasagna",
+        "uuid": "e37094a8-1fba-4781-92b1-da206cd101ec",
+        "concepts": [
+          "basics-1"
+        ],
+        "prerequisites": [],
+        "status": "beta"
+      }
+    ],
     "practice": [
       {
         "slug": "anagram",
