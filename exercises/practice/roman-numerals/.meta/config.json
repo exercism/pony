@@ -3,6 +3,9 @@
   "authors": [
     "Theodus"
   ],
+  "contributors": [
+        "redvers"
+  ],
   "files": {
     "solution": [
       "roman_numerals.pony"

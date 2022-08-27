@@ -3,6 +3,9 @@
   "authors": [
     "Theodus"
   ],
+  "contributors": [
+        "redvers"
+  ],
   "files": {
     "solution": [
       "pascals_triangle.pony"

@@ -3,6 +3,9 @@
   "authors": [
     "Theodus"
   ],
+  "contributors": [
+        "redvers"
+  ],
   "files": {
     "solution": [
       "atbash_cipher.pony"
