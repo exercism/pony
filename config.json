@@ -8,6 +8,9 @@
     "representer": false,
     "analyzer": false
   },
+  "test_runner": {
+    "average_run_time": 10.0
+  },
   "blurb": "Pony is an open-source, object-oriented, actor-model, capabilities-secure, high-performance programming language.",
   "version": 3,
   "online_editor": {
