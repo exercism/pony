@@ -35,11 +35,14 @@ class iso _TestRomanNumerals is UnitTest
 
     for test in tests.values() do
       try
+        // Assert a valid number results in the correct numeral
         h.assert_eq[String](RomanNumerals(test._1)?, test._2)
       else
         h.fail()
       end
     end
 
+    // Negative numbers should raise an error
     h.assert_error({() ? => RomanNumerals(-1)? })
+    // Throw an error for numbers larger than about 3000
     h.assert_error({() ? => RomanNumerals(4000)? })

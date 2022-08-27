@@ -25,7 +25,9 @@ class iso _TestPascalsTriangle is UnitTest
     loc: SourceLoc = __loc)
   ? =>
     let t = PascalsTriangle.rows(count)
+    // Assert height of triangle
     h.assert_eq[USize](t.size(), expected.size())
     for i in Range(0, expected.size()) do
+      // Assert contents of row
       h.assert_array_eq[USize](expected(i)?, t(i)?)
     end

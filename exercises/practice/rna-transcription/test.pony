@@ -28,5 +28,7 @@ class iso _TestRNATrancription is UnitTest
       h.assert_eq[String](ToRNA(input)?, expected)
     end
 
+    // There is no complement for uracil, throw an error
     h.assert_error({() ? => ToRNA("U")? })
+    // There is no complement for X, throw an error
     h.assert_error({() ? => ToRNA("ACGTXXXCTTAA")? })

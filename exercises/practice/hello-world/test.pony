@@ -11,4 +11,5 @@ class iso _TestHelloWorld is UnitTest
   fun name(): String => "hello-world/HelloWorld"
 
   fun apply(h: TestHelper) =>
+    // Check HelloWorld.hello() returns "Hello, World!" 
     h.assert_eq[String]("Hello, World!", HelloWorld.hello())
