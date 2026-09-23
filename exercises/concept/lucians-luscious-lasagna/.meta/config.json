@@ -1,0 +1,18 @@
+{
+  "blurb": "The basics of pony's variables via Lasagna",
+  "authors": [
+    "redvers"
+  ],
+  "files": {
+    "solution": [
+      "lasagna.pony"
+    ],
+    "test": [
+      "test.pony"
+    ],
+    "exemplar": [
+      ".meta/example.pony"
+    ]
+  },
+  "source": "This is an exercise to introduce basic pony types"
+}
