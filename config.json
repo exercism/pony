@@ -26,7 +26,7 @@
       "test.pony"
     ],
     "example": [
-      "example.pony"
+      ".meta/example.pony"
     ],
     "exemplar": [
       ".meta/exemplar.pony"
