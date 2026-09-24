@@ -36,7 +36,7 @@
     "concept": [
       {
         "slug": "wibble",
-        "name": "wibble",
+        "name": "test",
         "uuid": "59d6a98f-0b69-4ca9-8477-5e99f3b527f3",
         "concepts": [ "basics" ],
         "prerequisites": [],
