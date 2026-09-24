@@ -1,0 +1,15 @@
+{
+  "authors": [ "redvers" ],
+  "files": {
+    "solution": [
+      "wibble.pony"
+    ],
+    "test": [
+      "test.pony"
+    ],
+    "exemplar": [
+      ".meta/exemplar.pony"
+    ]
+  },
+  "blurb": "A stub"
+}
