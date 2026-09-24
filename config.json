@@ -177,6 +177,13 @@
       }
     ]
   },
+  "concepts": [
+    {
+      "uuid": "f52a86d3-405f-4102-8f34-a7344c85bc29",
+      "slug": "basics",
+      "name": "Basics"
+    }
+  ],
   "key_features": [
     {
       "title": "Concurrency",
