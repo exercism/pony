@@ -4,7 +4,7 @@
   "active": false,
   "status": {
     "concept_exercises": false,
-    "test_runner": false,
+    "test_runner": true,
     "representer": false,
     "analyzer": false
   },
@@ -14,6 +14,9 @@
     "indent_style": "space",
     "indent_size": 2,
     "highlightjs_language": "pony"
+  },
+  "test_runner": {
+    "average_run_time": 5
   },
   "files": {
     "solution": [
@@ -30,7 +33,6 @@
     ]
   },
   "exercises": {
-    "concept": [],
     "practice": [
       {
         "slug": "anagram",
@@ -165,7 +167,6 @@
       }
     ]
   },
-  "concepts": [],
   "key_features": [
     {
       "title": "Concurrency",
@@ -199,14 +200,14 @@
     }
   ],
   "tags": [
+    "execution_mode/compiled",
     "paradigm/object_oriented",
+    "platform/linux",
+    "platform/mac",
+    "platform/windows",
+    "runtime/standalone_executable",
     "typing/static",
     "typing/strong",
-    "execution_mode/compiled",
-    "platform/windows",
-    "platform/mac",
-    "platform/linux",
-    "runtime/standalone_executable",
     "used_for/backends",
     "used_for/financial_systems",
     "used_for/scientific_calculations"
