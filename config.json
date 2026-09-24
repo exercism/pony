@@ -3,7 +3,7 @@
   "slug": "pony",
   "active": false,
   "status": {
-    "concept_exercises": false,
+    "concept_exercises": true,
     "test_runner": true,
     "representer": false,
     "analyzer": false
@@ -33,6 +33,16 @@
     ]
   },
   "exercises": {
+    "concept": [
+      {
+        "slug": "wibble",
+        "name": "test",
+        "uuid": "59d6a98f-0b69-4ca9-8477-5e99f3b527f3",
+        "concepts": [ "basics" ],
+        "prerequisites": [],
+        "status": "wip"
+      }
+    ],
     "practice": [
       {
         "slug": "anagram",
