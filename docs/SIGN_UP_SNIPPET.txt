@@ -1,0 +1,14 @@
+primitive Words
+  fun most_common(text: String): String =>
+    let counts = Map[String, USize]
+    var best = ""
+    var best_count: USize = 0
+    for word in text.lower().split(" ").values() do
+      let count = counts.get_or_else(word, 0) + 1
+      counts(word) = count
+      if count > best_count then
+        best = word
+        best_count = count
+      end
+    end
+    "\"" + best + "\" appears " + best_count.string() + " times"
